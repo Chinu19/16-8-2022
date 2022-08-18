@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class String1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Scanner sc=new Scanner (System.in);
+       String n1;
+       char f1;
+       
+       System.out.println("enter your name:");
+       n1=sc.next();
+       System.out.println("enter a alphabet from ur name:");
+       f1=sc.next().charAt(0);
+       System.out.println("our result string is:"+removeoccurences(n1,f1));  
+       
+	}
+
+	private static String removeoccurences(String n1, char f1) {
+		// TODO Auto-generated method stub
+	  ArrayList<Character> obj=new ArrayList<>();
+	  String input =n1;
+	for(int i=0;i<input.length();i++)
+	  {
+		  char ch=input.charAt(i);
+		  if(ch!=f1)
+		  {
+			obj.add(ch);
+		  }
+	  }
+	StringBuilder stringBuilder =new StringBuilder();
+	for(char c:obj)
+	{
+		stringBuilder.append(c);
+	}
+	return stringBuilder.toString();
+	}
+
+}
